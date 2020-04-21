@@ -1,6 +1,6 @@
 import React, {Components} from 'react';
 
-//le composant : il y à un constructeur qui va initiatiliser 3 "state: erreur, isLoaded, items".c'est un tableau vide pour linstant
+//le composant : il y à un constructeur qui va initiatiliser 2 "state: isLoaded, items".c'est un tableau vide pour linstant
 class App extends React.Component {
     constructor(props) {
       super(props);
@@ -36,32 +36,33 @@ class App extends React.Component {
       //Sinon on a un retourn d'une liste de ul et chacun de nos items est dans un "li"
        else {
         return (
-          <div className="App table-films">
-            <table>
-              <tr>
-                          
-          {/* { console.log(items.results) } */}
-              
-              {items.results.map(item => (
-                  <td>
-                    <li key={item.id}>
-                  
-                  <img src={chemin + item.poster_path} alt={item.title} />
-                  echo=""
-                  {item.title}
-                  
-                  {item.vote_average} 
-                      
-                </li>
-               </td> 
-              ))}
+         
+          <div className="App">
           
-              </tr>
-            </table>
+              {/* { console.log(items.results) } */}
+          <table>
+          <tr>
+                       
+              {items.results.map(item => (
+                     <li className="border-bottom border-dark mb-5 pb-2">                      
+                        <td><img src={chemin + item.poster_path} alt={item.title} /></td> 
+                        <tr><td>{item.title}</td></tr>
+                        <tr><td>{item.vote_average}</td></tr>
+                     </li> 
+                  ))
+                  }
+                
+            
+            </tr>
+          </table>              
           </div>
-        );
-      }
-    }
+         
+      )
   }
+
+
+}
+
+}
 
   export default App;
