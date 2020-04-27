@@ -39,7 +39,7 @@ class App extends React.Component {
          
           <div className="App">
           
-              {/* { console.log(items.results) } */}
+              { console.log(items.results) }
           <table>
           <tr>
                        
